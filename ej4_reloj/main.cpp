@@ -1,4 +1,4 @@
-// Ejercicio 4: Reloj (horas sin fechas)
+
 #include <iostream>
 #include <iomanip>
 #include <sstream>
@@ -7,11 +7,11 @@ using namespace std;
 
 class Clock {
 private:
-    int minutos;   // minutos desde las 00:00, siempre en [0, 1439]
+    int minutos;  
     static const int MIN_POR_DIA = 24 * 60;
 
     static int normalizar(int total) {
-        // El doble módulo evita residuos negativos de C++
+        
         return ((total % MIN_POR_DIA) + MIN_POR_DIA) % MIN_POR_DIA;
     }
 
