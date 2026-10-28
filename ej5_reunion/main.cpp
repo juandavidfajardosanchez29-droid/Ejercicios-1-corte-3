@@ -1,4 +1,4 @@
-// Ejercicio 5: Fecha de una reunión (meetup)
+
 #include <iostream>
 #include <iomanip>
 #include <sstream>
@@ -13,7 +13,7 @@ int diasDelMes(int y, int m) {
     return (m == 2 && esBisiesto(y)) ? 29 : d[m - 1];
 }
 
-// Algoritmo de Sakamoto: 0 = domingo, 1 = lunes, ..., 6 = sábado
+
 int diaSemana(int y, int m, int d) {
     static const int t[] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
     if (m < 3) y -= 1;
@@ -28,11 +28,11 @@ string meetup(int year, int month, const string& weekday, const string& week) {
     int dia;
 
     if (week == "last") {
-        // Se parte del último día del mes y se retrocede hasta el día buscado
+ 
         dia = diasDelMes(year, month);
         while (diaSemana(year, month, dia) != objetivo) dia--;
     } else {
-        // Primer día posible de cada semana; se avanza hasta el día buscado
+
         static const map<string, int> inicio = {
             {"first", 1}, {"second", 8}, {"third", 15}, {"fourth", 22}, {"teenth", 13}};
         dia = inicio.at(week);
